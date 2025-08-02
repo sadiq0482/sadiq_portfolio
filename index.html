@@ -4,297 +4,289 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sadiq - Portfolio</title>
-
   <meta name="description" content="Portfolio of S M Sadiq Hussain - Python & Django Developer">
   <meta name="author" content="S M Sadiq Hussain">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #eef2f3, #cfd9df);
-    color: #2c3e50;
-    line-height: 1.6;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
-    flex-wrap: wrap;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-button {
-    background: none;
-    border: none;
-    color: white;
-    padding: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-
-  .nav-button:hover,
-  .nav-button.active {
-    background-color: #1e3c72;
-    font-weight: bold;
-  }
-
-  section {
-    display: none;
-    padding: 3rem 2rem;
-    max-width: 1000px;
-    margin: 2rem auto;
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    animation: fadeIn 0.5s ease-in-out;
-  }
-
-  .active {
-    display: block;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    html {
+      scroll-behavior: smooth;
     }
-  }
 
-  .profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid #3498db;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #cfd9df);
+      color: #2c3e50;
+      line-height: 1.6;
+    }
 
-  h2 {
-    color: #1e3c72;
-    margin-bottom: 1rem;
-  }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+      flex-wrap: wrap;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-  ul {
-    padding-left: 20px;
-  }
+    nav a {
+      color: white;
+      padding: 1rem;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
 
-  .project,
-  .certificate {
-    background: #f0f9ff;
-    border-left: 4px solid #1e90ff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-  }
+    nav a:hover, nav a.active {
+      background-color: #1e3c72;
+      font-weight: bold;
+    }
 
-  .certificate img {
-    max-width: 100%;
-    border: 4px solid #3498db;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
-  }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
 
-  footer {
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
+    h2 {
+      color: #1e3c72;
+      margin-bottom: 1rem;
+    }
 
-  .btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    background-color: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.3s;
-  }
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #3498db;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
 
-  .btn:hover {
-    background-color: #1e6ea6;
-  }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
 
-  form input,
-  form textarea {
-    display: block;
-    width: 100%;
-    padding: 0.7rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+    .btn:hover {
+      background-color: #1e6ea6;
+    }
 
-  @media (max-width: 768px) {
-    .home-flex {
-      flex-direction: column;
+    .skill-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .skill-box img {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+
+    .skill-info {
+      flex: 1;
+    }
+
+    .skill-title {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .progress-bar {
+      background: #dee2e6;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 10px;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #3498db;
+    }
+
+    .project {
+      background: #f0f9ff;
+      border-left: 4px solid #1e90ff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    .certificates-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding-top: 1rem;
+    }
+
+    .certificate-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .certificate-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .certificate-card img {
+      width: 100%;
+      border-bottom: 1px solid #eee;
+    }
+
+    .certificate-info {
+      padding: 1rem;
       text-align: center;
     }
 
-    .home-left,
-    .home-right {
-      padding: 1rem 0;
+    .certificate-info h3 {
+      font-size: 1.05rem;
+      color: #0077cc;
     }
-  }
 
-  .skill-box {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
 
-  .skill-box img {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
-  }
+    .contact-details, .contact-form {
+      flex: 1 1 45%;
+    }
 
-  .skill-info {
-    flex: 1;
-  }
+    .contact-details p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
 
-  .skill-title {
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
+    .contact-details i {
+      margin-right: 10px;
+      color: #0077cc;
+    }
 
-  .progress-bar {
-    background: #dee2e6;
-    border-radius: 10px;
-    overflow: hidden;
-    height: 10px;
-  }
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
 
-  .progress {
-    height: 100%;
-    background-color: #3498db;
-  }
-</style>
+    footer {
+      background: #2c5364;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
 
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+      }
 
+      nav {
+        flex-direction: column;
+      }
 
+      nav a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav>
-    <button class="nav-button active" onclick="showSection(event, 'home')">Home</button>
-    <button class="nav-button" onclick="showSection(event, 'skills')">Skills</button>
-    <button class="nav-button" onclick="showSection(event, 'projects')">Projects</button>
-    <button class="nav-button" onclick="showSection(event, 'certificates')">Certificates</button>
-    <button class="nav-button" onclick="showSection(event, 'contact')">Contact</button>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Home Section -->
-  <section id="home" class="section active">
-    <div class="home-flex" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-      <div class="home-left" style="flex: 1; min-width: 250px; padding-right: 2rem;">
+  <!-- Home -->
+  <section id="home">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div style="flex: 1; padding-right: 2rem; min-width: 280px;">
         <h2>Shaik Mohammad Sadiq Hussain</h2>
-        <p>
-          Motivated B.Tech student in Electronics and Communication Engineering with a strong background in programming and software development. Passionate about using technology to solve real-world problems. Skilled in Python, Django, and web development. Committed to continuous learning and growth through hands-on experience and real-time projects.
-        </p>
-        
-        <a href="SADIQ_RESUME.pdf" download class="btn">Download Resume</a>
+        <p>B.Tech ECE Student | Focused on Python, Django & Real-World Solutions</p>
+        <a href="SADIQ_RESUME.pdf" class="btn" download>Download Resume</a>
       </div>
-      <div class="home-right" style="flex: 1; min-width: 250px; text-align: center;">
-        <img src="sadiq_photo.jpg" alt="S M Sadiq Hussain" class="profile-img" />
+      <div style="flex: 1; text-align: center; min-width: 250px;">
+        <img src="sadiq_photo.jpg" alt="S M Sadiq Hussain" class="profile-img">
       </div>
     </div>
   </section>
 
-  <!-- Skills + Education Section -->
-  <section id="skills" class="section">
-    <h2>Technical Skills</h2>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Motivated B.Tech student in Electronics and Communication Engineering with a strong background in programming and software development. Passionate about using technology to solve real-world problems. Skilled in Python, Django, and web development. Committed to continuous learning and growth through hands-on experience and real-time projects.</p>
+  </section>
 
-    <div class="skill-box">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-      <div class="skill-info">
-        <div class="skill-title">Python – 70%</div>
-        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-      </div>
-    </div>
-
-    <div class="skill-box">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git & GitHub">
-      <div class="skill-info">
-        <div class="skill-title">Git & GitHub – 60%</div>
-        <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-      </div>
-    </div>
-
-    <div class="skill-box">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-      <div class="skill-info">
-        <div class="skill-title">HTML & CSS – 80%</div>
-        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-      </div>
-    </div>
-
-    <div class="skill-box">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
-      <div class="skill-info">
-        <div class="skill-title">Django Framework – 60%</div>
-        <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-      </div>
-    </div>
-
-    <div class="skill-box">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
-      <div class="skill-info">
-        <div class="skill-title">Figma – 70%</div>
-        <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-      </div>
-    </div>
-
-    <!-- Education -->
-    <h2 style="margin-top: 2rem;">Education</h2>
-
-    <div class="certificate">
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="project">
       <h3>Bachelor of Technology (B.Tech)</h3>
       <p><strong>Branch:</strong> Electronics and Communication Engineering</p>
       <p><strong>College:</strong> SVR Engineering College, Nandyala</p>
       <p><strong>University:</strong> JNTU Anantapur</p>
       <p><strong>Year:</strong> 2022 – Present</p>
     </div>
-
-    <div class="certificate">
+    <div class="project">
       <h3>Intermediate (10+2)</h3>
       <p><strong>College:</strong> Rao’s Junior College, Nandyala</p>
       <p><strong>Year:</strong> 2020 – 2022</p>
     </div>
-
-    <div class="certificate">
+    <div class="project">
       <h3>High School</h3>
       <p><strong>School:</strong> SRKV E/M School, Nandyala</p>
       <p><strong>Year:</strong> 2020</p>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><div class="skill-info"><div class="skill-title">Python – 70%</div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div></div>
+    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"><div class="skill-info"><div class="skill-title">Django – 60%</div><div class="progress-bar"><div class="progress" style="width: 60%;"></div></div></div></div>
+    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><div class="skill-info"><div class="skill-title">HTML & CSS – 80%</div><div class="progress-bar"><div class="progress" style="width: 80%;"></div></div></div></div>
+    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><div class="skill-info"><div class="skill-title">Git & GitHub – 60%</div><div class="progress-bar"><div class="progress" style="width: 60%;"></div></div></div></div>
+    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><div class="skill-info"><div class="skill-title">Figma – 70%</div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div></div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
     <h2>Projects & Internship</h2>
     <div class="project">
       <h3>Python Full Stack Developer Virtual Internship</h3>
@@ -307,219 +299,175 @@
     </div>
   </section>
 
-  <!-- Certificates Section -->
-<section id="certificates" class="section">
-  <h2>Certificates</h2>
-
-  <style>
-    .certificates-grid {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .certificate-card {
-      flex: 1 1 45%;
-      text-align: center;
-    }
-
-    .certificate-card img {
-      width: 100%;
-      max-width: 300px;
-      border: 4px solid #0077cc;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .certificate-card img:hover {
-      transform: scale(1.03);
-    }
-
-    .certificate-card h3 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.1rem;
-      color: #03396c;
-    }
-
-    @media (max-width: 768px) {
-      .certificates-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
-
-  <div class="certificates-grid">
-    <div class="certificate-card">
-      <h3>Transducers for Instrumentation (NPTEL)</h3>
-      <img src="Transducers for Instrumentation_page-0001.jpg" alt="NPTEL Certificate">
+  <!-- Certificates -->
+  <section id="certificates">
+    <h2 style="text-align: center; color: #1e3c72;">My Certifications</h2>
+    <div class="certificates-container">
+      <div class="certificate-card"><img src="Transducers for Instrumentation_page-0001.jpg" alt="NPTEL Certificate"><div class="certificate-info"><h3>Transducers for Instrumentation</h3><p>NPTEL</p></div></div>
+      <div class="certificate-card"><img src="Python Full Stack Developer Virtual Internship_page-0001.jpg" alt="Python Internship"><div class="certificate-info"><h3>Python Full Stack Developer</h3><p>Eduskills</p></div></div>
+      <div class="certificate-card"><img src="Ui _path_page-0001.jpg" alt="UiPath Certificate"><div class="certificate-info"><h3>Hack-a-bot</h3><p>UiPath – SVR College</p></div></div>
     </div>
+  </section>
 
-    <div class="certificate-card">
-      <h3>Python Full Stack Developer Virtual Internship (Eduskills)</h3>
-      <img src="Python Full Stack Developer Virtual Internship_page-0001.jpg" alt="Internship Certificate">
-    </div>
-  </div>
-</section>
-
-
-
+  <!-- Contact -->
   <!-- Contact Section -->
-<section id="contact" class="section">
+<section id="contact">
   <h2>Contact Me</h2>
-
-  <style>
-    .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: flex-start;
-      justify-content: space-between;
-      background: #ffffff;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-    }
-
-    .contact-details, .contact-form {
-      flex: 1 1 45%;
-    }
-
-    .contact-details p {
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-    }
-
-    .contact-details i {
-      margin-right: 12px;
-      color: #0077cc;
-      font-size: 1.2rem;
-      width: 24px;
-    }
-
-    .contact-form .form-group {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 1rem 1rem 0.5rem 1rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      background: #f7f9fb;
-      transition: border 0.3s;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #0077cc;
-      outline: none;
-    }
-
-    .contact-form label {
-      position: absolute;
-      top: 0.6rem;
-      left: 1rem;
-      font-size: 0.9rem;
-      color: #666;
-      pointer-events: none;
-      transition: all 0.2s ease;
-    }
-
-    .contact-form input:focus + label,
-    .contact-form input:not(:placeholder-shown) + label,
-    .contact-form textarea:focus + label,
-    .contact-form textarea:not(:placeholder-shown) + label {
-      top: -0.8rem;
-      left: 0.8rem;
-      font-size: 0.75rem;
-      background: #f7f9fb;
-      padding: 0 4px;
-      color: #0077cc;
-    }
-
-    .contact-form button {
-      background-color: #0077cc;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background-color: #005fa3;
-    }
-
-    @media (max-width: 768px) {
-      .contact-section {
-        flex-direction: column;
-      }
-
-      .contact-details, .contact-form {
-        width: 100%;
-      }
-    }
-  </style>
-
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <div class="contact-section">
+  <div class="contact-container">
+    
     <!-- Contact Info -->
-    <div class="contact-details">
+    <div class="contact-info">
       <p><i class="fas fa-envelope"></i> <a href="mailto:smsadiq5953@gmail.com">smsadiq5953@gmail.com</a></p>
       <p><i class="fas fa-phone"></i> +91 9182032289</p>
       <p><i class="fas fa-map-marker-alt"></i> Nandyal, India</p>
       <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/your-link" target="_blank">linkedin.com/in/your-link</a></p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/sadiq0482" target="_blank">github.com/yourusername</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
     </div>
 
     <!-- Contact Form -->
     <form class="contact-form" action="mailto:smsadiq5953@gmail.com" method="post" enctype="text/plain">
       <div class="form-group">
-        <input type="text" name="name" placeholder=" " required>
-        <label>Your Name</label>
+        <i class="fas fa-user"></i>
+        <input type="text" name="name" id="name" required>
+        <label for="name">Your Name</label>
       </div>
       <div class="form-group">
-        <input type="email" name="email" placeholder=" " required>
-        <label>Your Email</label>
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" id="email" required>
+        <label for="email">Your Email</label>
       </div>
       <div class="form-group">
-        <textarea name="message" rows="6" placeholder=" " required></textarea>
-        <label>Your Message</label>
+        <i class="fas fa-comment-dots"></i>
+        <textarea name="message" id="message" rows="5" required></textarea>
+        <label for="message">Your Message</label>
       </div>
-      <button type="submit">Send Message</button>
+      <button type="submit" class="btn">Send</button>
     </form>
   </div>
 </section>
 
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<!-- Contact Section CSS -->
+<style>
+  #contact {
+    max-width: 1000px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  }
+
+  #contact h2 {
+    text-align: center;
+    color: #1e3c72;
+    margin-bottom: 2rem;
+  }
+
+  .contact-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contact-info {
+    flex: 1 1 40%;
+    font-size: 1rem;
+  }
+
+  .contact-info p {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .contact-info i {
+    margin-right: 10px;
+    color: #0077cc;
+    font-size: 1.2rem;
+  }
+
+  .contact-form {
+    flex: 1 1 55%;
+    background: #f7faff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  }
+
+  .form-group {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 1rem 1rem 1rem 2.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    transition: border 0.3s;
+  }
+
+  .form-group i {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #0077cc;
+  }
+
+  .form-group label {
+    position: absolute;
+    top: -1.2rem;
+    left: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+    background: #f7faff;
+    padding: 0 6px;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #0077cc;
+    outline: none;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #005fa3;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+      width: 100%;
+    }
+  }
+</style>
 
 
   
-
-  <!-- Script -->
-  <script>
-    function showSection(event, id) {
-      const sections = document.querySelectorAll('.section');
-      sections.forEach(section => section.classList.remove('active'));
-
-      const buttons = document.querySelectorAll('.nav-button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-
-      document.getElementById(id).classList.add('active');
-      event.target.classList.add('active');
-    }
-  </script>
 
 </body>
 </html>
