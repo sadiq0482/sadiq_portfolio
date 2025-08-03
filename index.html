@@ -284,15 +284,134 @@
     </div>
   </section>
 
-  <!-- Skills -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skills Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      padding: 40px;
+      margin: 0;
+    }
+
+    #skills {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    #skills h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .skill-box {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill-box img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .skill-info {
+      flex: 1;
+    }
+
+    .skill-title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 16px;
+    }
+
+    .progress-bar {
+      height: 12px;
+      background-color: #eee;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      background-color: #007bff;
+      transition: width 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Skills Section -->
   <section id="skills">
     <h2>Technical Skills</h2>
-    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><div class="skill-info"><div class="skill-title">Python – 70%</div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div></div>
-    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"><div class="skill-info"><div class="skill-title">Django – 60%</div><div class="progress-bar"><div class="progress" style="width: 60%;"></div></div></div></div>
-    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"><div class="skill-info"><div class="skill-title">HTML & CSS – 80%</div><div class="progress-bar"><div class="progress" style="width: 80%;"></div></div></div></div>
-    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"><div class="skill-info"><div class="skill-title">Git & GitHub – 90%</div><div class="progress-bar"><div class="progress" style="width: 60%;"></div></div></div></div>
-    <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><div class="skill-info"><div class="skill-title">Figma – 70%</div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div></div>
+
+    <div class="skill-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <div class="skill-info">
+        <div class="skill-title">Python – 70%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+      <div class="skill-info">
+        <div class="skill-title">Django – 60%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 60%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <div class="skill-info">
+        <div class="skill-title">HTML & CSS – 80%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 80%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+      <div class="skill-info">
+        <div class="skill-title">Git & GitHub – 90%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 90%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+      <div class="skill-info">
+        <div class="skill-title">Figma – 70%</div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 70%;"></div>
+        </div>
+      </div>
+    </div>
+
   </section>
+
+</body>
+
+
 
   <!-- Projects -->
   <section id="projects">
@@ -480,4 +599,3 @@
 
 </body>
 </html>
-
