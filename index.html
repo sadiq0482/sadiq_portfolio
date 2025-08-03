@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sadiq Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadiq - Portfolio</title>
+  <meta name="description" content="Portfolio of S M Sadiq Hussain - Python & Django Developer">
+  <meta name="author" content="S M Sadiq Hussain">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
   <style>
     * {
       margin: 0;
@@ -14,6 +17,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* fixes section heading hiding issue */
     }
 
     body {
@@ -23,10 +27,13 @@
       line-height: 1.6;
     }
 
-    nav {
+    header {
       position: sticky;
       top: 0;
       z-index: 1000;
+    }
+
+    nav {
       display: flex;
       justify-content: center;
       background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
@@ -73,14 +80,15 @@
     .btn {
       display: inline-block;
       padding: 0.6rem 1.2rem;
+      font-size: 1rem;
       background-color: #0077cc;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      text-decoration: none;
-      font-size: 1rem;
       transition: background 0.3s ease;
+      text-align: center;
+      text-decoration: none;
     }
 
     .btn:hover {
@@ -91,12 +99,17 @@
       display: flex;
       align-items: center;
       margin-bottom: 1rem;
+      gap: 1rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     }
 
     .skill-box img {
-      width: 32px;
-      height: 32px;
-      margin-right: 10px;
+      width: 40px;
+      height: 40px;
     }
 
     .skill-info {
@@ -105,19 +118,21 @@
 
     .skill-title {
       font-weight: bold;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      font-size: 16px;
     }
 
     .progress-bar {
-      background: #dee2e6;
-      border-radius: 10px;
+      height: 12px;
+      background-color: #eee;
+      border-radius: 6px;
       overflow: hidden;
-      height: 10px;
     }
 
     .progress {
       height: 100%;
-      background-color: #3498db;
+      background-color: #007bff;
+      transition: width 0.5s ease-in-out;
     }
 
     .project {
@@ -132,7 +147,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      padding-top: 1rem;
     }
 
     .certificate-card {
@@ -150,7 +164,7 @@
 
     .certificate-card img {
       width: 100%;
-      border-bottom: 1px solid #eee;
+      height: auto;
     }
 
     .certificate-info {
@@ -163,13 +177,10 @@
       color: #0077cc;
     }
 
-    #contact {
-      max-width: 1000px;
-      margin: 2rem auto;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 2rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* Contact Section */
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .contact-container {
@@ -201,115 +212,159 @@
       background: #f7faff;
       padding: 2rem;
       border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+    .form-group {
+      position: relative;
+      margin-bottom: 2rem;
     }
 
-    .contact-form button {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
-      padding: 0.9rem;
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      border-radius: 6px;
+      padding: 1rem 1rem 1rem 2.5rem;
       font-size: 1rem;
-      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+      transition: border 0.3s;
     }
 
-    .contact-form button:hover {
-      background-color: #005fa3;
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #0077cc;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: -1.2rem;
+      left: 0.5rem;
+      font-size: 0.85rem;
+      color: #666;
+      background: #f7faff;
+      padding: 0 6px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: #0077cc;
+      outline: none;
+    }
+
+    footer {
+      background: #2c5364;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
 
     @media (max-width: 768px) {
-      nav {
-        overflow-x: auto;
-        white-space: nowrap;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: start;
-      }
+  nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
 
-      nav a {
-        flex: 0 0 auto;
-        text-align: center;
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-      }
+  nav a {
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
 
-      section {
-        margin: 1rem;
-        padding: 2rem 1rem;
-      }
+  section {
+    margin: 1rem;
+    padding: 2rem 1rem;
+  }
 
-      .skill-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  .skill-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .profile-img {
-        width: 150px;
-        height: 150px;
-        margin-top: 1rem;
-      }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    margin-top: 1rem;
+  }
 
-      .contact-container {
-        flex-direction: column;
-      }
-    }
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+}
+
   </style>
 </head>
-<body>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
+<body>
+
+  <header>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
   <section id="home">
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
-      <div style="flex: 1; padding-right: 1.5rem; min-width: 260px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+      <div style="flex: 1; padding-right: 2rem; min-width: 280px;">
         <h2>Shaik Mohammad Sadiq Hussain</h2>
         <p>B.Tech ECE Student | Focused on Python, Django & Real-World Solutions</p>
         <a href="sadiq_resume.pdf" class="btn" download>Download Resume</a>
       </div>
-      <div style="flex: 1; text-align: center;">
-        <img src="sadiq_photo.jpg" alt="Sadiq" class="profile-img">
+      <div style="flex: 1; text-align: center; min-width: 250px;">
+        <img src="IMAGE_SADIQ.jpg" alt="S M Sadiq Hussain" class="profile-img">
       </div>
     </div>
   </section>
 
+  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>Motivated B.Tech student in Electronics and Communication Engineering with a strong background in programming and software development. Passionate about using technology to solve real-world problems.</p>
+    <p>Motivated B.Tech student in Electronics and Communication Engineering with a strong background in programming and software development. Passionate about using technology to solve real-world problems. Skilled in Python, Django, and web development. Committed to continuous learning and growth through hands-on experience and real-time projects.</p>
   </section>
 
+  <!-- Education -->
   <section id="education">
     <h2>Education</h2>
     <div class="project">
-      <h3>B.Tech - SVR Engineering College</h3>
-      <p>Electronics and Communication Engineering (2022–Present)</p>
+      <h3>Bachelor of Technology (B.Tech)</h3>
+      <p><strong>Branch:</strong> Electronics and Communication Engineering</p>
+      <p><strong>College:</strong> SVR Engineering College, Nandyala</p>
+      <p><strong>University:</strong> JNTU Anantapur</p>
+      <p><strong>Year:</strong> 2022 – Present</p>
     </div>
     <div class="project">
-      <h3>Intermediate - Rao’s Junior College</h3>
-      <p>2020–2022</p>
+      <h3>Intermediate (10+2)</h3>
+      <p><strong>College:</strong> Rao’s Junior College, Nandyala</p>
+      <p><strong>Year:</strong> 2020 – 2022</p>
     </div>
     <div class="project">
-      <h3>School - SRKV E/M School</h3>
-      <p>Completed in 2020</p>
+      <h3>High School</h3>
+      <p><strong>School:</strong> SRKV E/M School, Nandyala</p>
+      <p><strong>Year:</strong> 2020</p>
     </div>
   </section>
 
+  <!-- Skills -->
   <section id="skills">
     <h2>Technical Skills</h2>
     <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"><div class="skill-info"><div class="skill-title">Python – 70%</div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div></div>
@@ -319,18 +374,21 @@
     <div class="skill-box"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"><div class="skill-info"><div class="skill-title">Figma – 70%</div><div class="progress-bar"><div class="progress" style="width: 70%;"></div></div></div></div>
   </section>
 
+  <!-- Projects -->
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Projects & Internship</h2>
     <div class="project">
-      <h3>Portfolio Website</h3>
-      <p>Built using HTML and CSS to showcase skills and achievements.</p>
+      <h3>Python Full Stack Developer Virtual Internship</h3>
+      <p><strong>Organization:</strong> Eduskills (April–June 2025)</p>
+      <p>Worked on backend development using Django, improved debugging, Git version control, and deployment skills.</p>
     </div>
     <div class="project">
-      <h3>Python Full Stack Internship</h3>
-      <p>Eduskills Virtual Internship (Apr–Jun 2025)</p>
+      <h3>Portfolio Website</h3>
+      <p>A personal portfolio website built with HTML and CSS to showcase my education, skills, and projects.</p>
     </div>
   </section>
 
+  <!-- Certificates -->
   <section id="certificates">
     <h2 style="text-align: center;">My Certifications</h2>
     <div class="certificates-container">
@@ -340,24 +398,42 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact-container">
       <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> smsadiq5953@gmail.com</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:smsadiq5953@gmail.com">smsadiq5953@gmail.com</a></p>
         <p><i class="fas fa-phone"></i> +91 9182032289</p>
         <p><i class="fas fa-map-marker-alt"></i> Nandyal, India</p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/s-m-sadiq-609487378" target="_blank">LinkedIn</a></p>
-        <p><i class="fab fa-github"></i> <a href="https://github.com/sadiq0482/sadiq_portfolio" target="_blank">GitHub</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/s-m-sadiq-609487378" target="_blank">linkedin.com/in/s-m-sadiq</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/sadiq0482/sadiq_portfolio" target="_blank">github.com/sadiq0482</a></p>
       </div>
+
       <form class="contact-form" action="mailto:smsadiq5953@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <div class="form-group">
+          <i class="fas fa-user"></i>
+          <input type="text" name="name" required>
+          <label>Your Name</label>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" name="email" required>
+          <label>Your Email</label>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-comment-dots"></i>
+          <textarea name="message" rows="5" required></textarea>
+          <label>Your Message</label>
+        </div>
+        <button type="submit" class="btn">Send</button>
       </form>
     </div>
   </section>
+
+  <footer>
+    &copy; 2025 S M Sadiq Hussain. All rights reserved.
+  </footer>
+
 </body>
 </html>
-
